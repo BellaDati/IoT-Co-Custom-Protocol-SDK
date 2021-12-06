@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.belladati</groupId>
     <artifactId>iot-protocol-sdk</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+
+    <name>BellaDati IoT Protocol SDK</name>
+    <url>http://www.belladati.com</url>
+    <description>The BellaDati IoT Protocol SDK allows extending IoT Controller with custom protocols.</description>
+    <scm>
+        <url>https://github.com/BellaDati/IoT-Co-Custom-Protocol-SDK.git</url>
+        <connection>scm:git:git@github.com:BellaDati/IoT-Co-Custom-Protocol-SDK.git</connection>
+        <developerConnection>scm:git:git@github.com:BellaDati/IoT-Co-Custom-Protocol-SDK.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>jbednarik</id>
+            <name>Jan Bednarik</name>
+            <email>jan.bednarik@belladati.com</email>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
