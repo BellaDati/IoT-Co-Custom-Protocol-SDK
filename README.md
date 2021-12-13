@@ -26,3 +26,8 @@ java -cp iot-collector-generic-receiver-prod.jar;iot-ext-1.0-SNAPSHOT-jar-with-d
 ```
 instead of traditional `java -jar`.
 
+## Sender actions
+
+Sender actions can be extended as well. Service loader file needs to be `com.belladati.iot.collector.generic.sender.verticle.action.Action`
+and actions need to implement `Action` interface. Extended actions then can be selected
+in IoT console and provided JSON config is passed to them.
