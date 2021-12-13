@@ -58,7 +58,7 @@ public interface Action {
 
 	/**
 	 * Called before sender is reloaded, actions need to e.g. disconnect so they can be reinitialized.
-	 * @return
+	 * @return future to be able to compose
 	 */
 	Future<Void> close();
 
@@ -66,13 +66,13 @@ public interface Action {
 	 * Handle result of an action. Just an utility method, does not need to be implemented or used.
 	 *
 	 * Typical usage is
-	 * someAction(ar -> handleResult(true, ar, promise, (s) -> promise.complete()))
+	 * someAction(ar -&gt; handleResult(true, ar, promise, (s) -&gt; promise.complete()))
 	 *
 	 * @param continueOnError when result fails, determine whether to fail or just continue with normal operation
 	 * @param result an action result
 	 * @param globalHandler handler to call when result fails, either complete or fail
 	 * @param successHandler handler to call when result is OK
-	 * @param <T>
+	 * @param <T> generic type given by Vert.X
 	 */
 	default <T> void handleResult(boolean continueOnError, AsyncResult<T> result, Promise<Void> globalHandler, Handler<T> successHandler) {
 		if (result.failed()) {
