@@ -1,8 +1,13 @@
-package com.belladati.iot.collector.generic.receiver.endpoint;
+package com.belladati.iot.collector.receiver.endpoint;
 
+import com.belladati.iot.collector.common.Field;
+import com.belladati.iot.collector.common.FieldType;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
+
+import java.util.Collections;
+import java.util.Map;
 
 /**
  * Implement to provide processing of a custom protocol.
@@ -51,4 +56,14 @@ public interface ReceiverEndpoint {
 	 * @return name
 	 */
 	default String receiverName() { return null; }
+
+	/**
+	 * Fields to show in UI for this endpoint to fill in. Values will be passed in form of a JSON to the action. In case
+	 * no fields are provided, textarea to input arbitrary JSON will be provided.
+	 *
+	 * @return fields and their label with type
+	 */
+	default Map<String, Field> configurationFields() {
+		return Collections.singletonMap("jsonConfig", new Field("JSON Configuration", FieldType.LONGTEXT));
+	}
 }

@@ -1,12 +1,16 @@
-package com.belladati.iot.collector.generic.sender.verticle.action;
+package com.belladati.iot.collector.sender;
 
-import com.belladati.iot.collector.generic.sender.verticle.Sender;
+import com.belladati.iot.collector.common.Field;
+import com.belladati.iot.collector.common.FieldType;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
 import io.vertx.core.Handler;
 import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+
+import java.util.Collections;
+import java.util.Map;
 
 public interface Action {
 
@@ -111,6 +115,16 @@ public interface Action {
 	 */
 	default boolean isActionInProgress() {
 		return false;
+	}
+
+	/**
+	 * Fields to show in UI for this action to fill in. Values will be passed in form of a JSON to the action. In case
+	 * no fields are provided, textarea to input arbitrary JSON will be provided.
+	 *
+	 * @return fields and their type
+	 */
+	default Map<String, Field> configurationFields() {
+		return Collections.singletonMap("jsonConfig", new Field("JSON Configuration", FieldType.LONGTEXT));
 	}
 
 	final class ProcessedData {

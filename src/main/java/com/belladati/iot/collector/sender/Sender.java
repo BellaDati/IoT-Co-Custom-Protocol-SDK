@@ -1,4 +1,4 @@
-package com.belladati.iot.collector.generic.sender.verticle;
+package com.belladati.iot.collector.sender;
 
 import io.vertx.core.Vertx;
 

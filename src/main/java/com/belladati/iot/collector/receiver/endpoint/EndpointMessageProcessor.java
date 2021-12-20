@@ -1,4 +1,4 @@
-package com.belladati.iot.collector.generic.receiver.endpoint;
+package com.belladati.iot.collector.receiver.endpoint;
 
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.json.JsonObject;

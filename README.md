@@ -10,7 +10,7 @@ and handle received data to a provided instance of a message processor.
 
 `java.util.ServiceLoader` is used to load this implementation into the receiver. Basically,
 all that needs to be done is to create a file 
-`META-INF/services/com.belladati.iot.collector.generic.receiver.endpoint.ReceiverEndpoint`
+`META-INF/services/com.belladati.iot.collector.receiver.endpoint.ReceiverEndpoint`
 that would contain fully qualified name of your implementation class, e.g.
 ```
 com.belladati.iot.ext.MyCustomEndpointImpl
@@ -28,6 +28,6 @@ instead of traditional `java -jar`.
 
 ## Sender actions
 
-Sender actions can be extended as well. Service loader file needs to be `com.belladati.iot.collector.generic.sender.verticle.action.Action`
+Sender actions can be extended as well. Service loader file needs to be `com.belladati.iot.collector.sender.Action`
 and actions need to implement `Action` interface. Extended actions then can be selected
 in IoT console and provided JSON config is passed to them.
