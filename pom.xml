@@ -4,7 +4,7 @@
 
     <groupId>com.belladati</groupId>
     <artifactId>iot-protocol-sdk</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3</version>
 
     <name>BellaDati IoT Protocol SDK</name>
     <url>http://www.belladati.com</url>
