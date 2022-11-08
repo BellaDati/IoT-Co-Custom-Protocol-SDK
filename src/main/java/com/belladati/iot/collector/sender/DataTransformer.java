@@ -27,7 +27,7 @@ public interface DataTransformer {
      *
      * @param config configuration
      */
-    void init(JsonObject config);
+    void init(JsonObject config, Sender sender);
 
     /**
      * Transform incoming array of data into transformed data
